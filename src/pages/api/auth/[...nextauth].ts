@@ -1,9 +1,7 @@
 import { query as q } from 'faunadb'
 
-import NextAuth from 'next-auth';
-
+import NextAuth from 'next-auth'
 import Providers from 'next-auth/providers'
-
 import { fauna } from '../../../services/fauna'
 
 export default NextAuth({
@@ -14,10 +12,8 @@ export default NextAuth({
       scope: 'read:user'
     }),
   ],
-
   callbacks: {
-    async session(session) {
-      
+    async session(session) {    
       try {
         const userActiveSubscription = await fauna.query(
           q.Get(
@@ -41,6 +37,7 @@ export default NextAuth({
             ])
           )
         )
+        
         return {
           ...session,
           activeSubsciption: userActiveSubscription
@@ -48,7 +45,7 @@ export default NextAuth({
       } catch {
         return {
           ...session,
-          activeSubscription: null,
+          activeSubscription: null
         }
       }
     },
