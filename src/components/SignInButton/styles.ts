@@ -1,4 +1,6 @@
-.signInButton {
+import styled from 'styled-components'
+
+export const SignInButton = styled.button`
   height: 3rem;
   border-radius: 3rem;
   background: var(--gray-850);
@@ -7,9 +9,12 @@
 
   display: flex;
   align-items: center;
+  justify-content: center;
 
   color: var(--white);
   font-weight: bold;
+
+  transition: filter 0.2s;
 
   svg {
     width: 20px;
@@ -20,13 +25,11 @@
     margin-right: 1rem;
   }
 
-  svg.closeIcon {
-    margin-left: 1rem;
-  }
-
-  transition: filter 0.2s;
-
   &:hover {
     filter: brightness(0.8);
   }
-}
+
+  .closeIcon {
+    margin-left: 1rem;
+  }
+`

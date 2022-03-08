@@ -1,4 +1,6 @@
-.contentContainer {
+import styled from 'styled-components'
+
+export const HomeMain = styled.main`
   max-width: 1120px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -7,14 +9,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
+`
 
-.hero {
+export const HomeSection = styled.section`
   max-width: 600px;
-
   > span {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-size: bold;
   }
 
   h1 {
@@ -42,4 +43,8 @@
   button {
     margin-top: 2.5rem;
   }
-}
+`
+
+export const HomeImg = styled.img``
+
+export default { HomeImg, HomeMain, HomeSection }
